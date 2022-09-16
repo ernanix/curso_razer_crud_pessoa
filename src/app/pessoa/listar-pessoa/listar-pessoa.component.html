@@ -7,7 +7,7 @@
         <th>Idade</th>
         <th>Data Nascimento</th>
         <th class="text-center">
-            <a href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success" 
+            <a href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success"
             [routerLink]="['/pessoas/novo']">
                 <i class="fa fa-plus" aria-hidden="true"></i> Novo
 
@@ -29,7 +29,14 @@
             </a>
         </td>
     </tr>
-</tbody>    
+    <tr class="table-primary">
+      <td colspan="8"  class="text-center">
+        <a href="#" title="Pessoas" alt="Lista Endereços" class="btn btn-outline-primary" [routerLink]="['/enderecos']">
+          Lista de endereços
+        </a>
+      </td>
+    </tr>
+</tbody>
 </table>
 
 <p *ngIf="pessoas.length == 0">Nenhuma pessoa cadastrada.</p>
