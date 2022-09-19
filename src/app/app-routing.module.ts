@@ -8,6 +8,10 @@ import { EditarEnderecoComponent } from './endereco/editar-endereco/editar-ender
 import { InserirEnderecoComponent } from './endereco/inserir-endereco/inserir-endereco.component';
 import { ListarEnderecoComponent } from './endereco/listar-endereco/listar-endereco.component';
 
+import { ListarCidadeComponent } from './cidade/listar-cidade/listar-cidade.component';
+import { InserirCidadeComponent } from './cidade/inserir-cidade/inserir-cidade.component';
+import { EditarCidadeComponent } from './cidade/editar-cidade/editar-cidade.component';
+
 //Usar pathMatch: 'full' quando teste path vazio
 const routes: Routes = [
   {path: '', redirectTo: 'pessoas/listar', pathMatch: 'full'},
@@ -19,6 +23,11 @@ const routes: Routes = [
   {path: 'enderecos/listar', component: ListarEnderecoComponent},
   {path: 'enderecos/novo', component: InserirEnderecoComponent},
   {path: 'enderecos/editar/:id', component: EditarEnderecoComponent},
+  {path: 'cidades', redirectTo: 'cidades/listar'},
+  {path: 'cidades/listar', component: ListarCidadeComponent},
+  {path: 'cidades/novo', component: InserirCidadeComponent},
+  {path: 'cidades/editar/:id', component: EditarCidadeComponent},
+
 ];
 
 @NgModule({

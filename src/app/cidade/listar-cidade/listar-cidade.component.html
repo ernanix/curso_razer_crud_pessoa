@@ -1,46 +1,44 @@
-<h1>Pessoas</h1>
+<h1>Cidades</h1>
 
 <table class="table table-striped table-bordered table-hover">
 <tbody>
     <tr>
         <th>Nome</th>
-        <th>Idade</th>
-        <th>Data Nascimento</th>
+        <th>Estado</th>
         <th class="text-center">
             <a href="#" title="Novo" alt="Novo" class="btn btn-xs btn-success"
-            [routerLink]="['/pessoas/novo']">
+            [routerLink]="['/cidades/novo']">
                 <i class="fa fa-plus" aria-hidden="true"></i> Novo
 
             </a>
         </th>
     </tr>
-    <tr *ngFor="let pessoa of pessoas">
-        <td>{{pessoa.nome}}</td>
-        <td>{{pessoa.idade}}</td>
-        <td>{{pessoa.dataNascimento}}</td>
+    <tr *ngFor="let cidade of cidades">
+        <td>{{cidade.nome}}</td>
+        <td>{{cidade.estado}}</td>
         <td class="text-center" style="width: 300px">
             <a href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info"
-                [routerLink]="['/pessoas/editar',pessoa.id]">
+                [routerLink]="['/cidades/editar',cidade.id]">
                 <i class="fa fa-edit" aria-hidden="true"></i> Editar
             </a>
             <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger"
-                (click)="remover($event,pessoa)">
+                (click)="remover($event,cidade)">
                 <i class="fa fa-times" aria-hidden="true"></i> Remover
             </a>
         </td>
     </tr>
     <tr class="table-primary">
       <td colspan="8"  class="text-center">
-        <a href="#" title="Pessoas" alt="Lista Endereços" class="btn btn-outline-primary" [routerLink]="['/enderecos']">
-          Lista de endereços
+        <a href="#" title="Pessoas" alt="Lista Pessoas" class="btn btn-outline-primary" [routerLink]="['/pessoas']">
+            Lista de pessoas
         </a>
-        <a href="#" title="Pessoas" alt="Lista Endereços" class="btn btn-outline-primary" [routerLink]="['/cidades']">
-            Lista de cidades
-          </a>
-  
+        <a href="#" title="Enderecos" alt="Lista Enderecos" class="btn btn-outline-primary" [routerLink]="['/enderecos']">
+            Lista de enderecos
+        </a>
       </td>
     </tr>
-</tbody>
+  </tbody>
 </table>
 
-<p *ngIf="pessoas.length == 0">Nenhuma pessoa cadastrada.</p>
+<p *ngIf="cidades.length == 0">Nenhuma cidade cadastrada.</p>
+

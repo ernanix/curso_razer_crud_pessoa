@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { PessoaModule } from './pessoa/pessoa.module';
 import { EnderecoModule } from './endereco/endereco.module';
-
+import { CidadeModule } from './cidade/cidade.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +15,8 @@ import { EnderecoModule } from './endereco/endereco.module';
     BrowserModule,
     AppRoutingModule,
     PessoaModule,
-    EnderecoModule
+    EnderecoModule,
+    CidadeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
