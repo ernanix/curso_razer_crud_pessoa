@@ -10,12 +10,16 @@ import { EditarPessoaComponent } from './editar-pessoa/editar-pessoa.component';
 import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NumericoDirective } from '../shared/directives/numerico.directive';
+import { MinimoValidatorDirective } from '../shared/directives/minimo-validator.directive';
 
 @NgModule({
   declarations: [
     ListarPessoaComponent,
     InserirPessoaComponent,
-    EditarPessoaComponent
+    EditarPessoaComponent,
+    NumericoDirective,
+    MinimoValidatorDirective
   ],
   imports: [
     CommonModule,

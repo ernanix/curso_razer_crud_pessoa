@@ -12,6 +12,7 @@ export class EstadoService {
 
   listarTodos() : Estado[] {
     const estados = localStorage[LS_CHAVE];
+    console.log(estados)
     return estados ? JSON.parse(estados) : [];
   }
 
@@ -21,20 +22,25 @@ export class EstadoService {
 
   inserir(estado:Estado) : void {
     estado.id = new Date().getTime();
-    localStorage[LS_CHAVE] =  JSON.stringify(this.listarTodos().push(estado));
+    let estados = this.listarTodos()
+    estados.push(estado)
+    localStorage[LS_CHAVE] =  JSON.stringify(estados);
   }
 
   atualizar(estado:Estado) : void {
-    localStorage[LS_CHAVE] = JSON.stringify(this.listarTodos().forEach(
+    let estados = this.listarTodos();
+    estados.forEach(
       (obj,index,objs) => {
         if (obj.id == estado.id)
           objs[index] = estado
       }
-    ))
+    )
+    localStorage[LS_CHAVE] = JSON.stringify(estados)
   }
 
   remover(id:number): void {
-    localStorage[LS_CHAVE] = JSON.stringify(this.listarTodos().filter(estado => estado.id != id));
+    let estados = this.listarTodos().filter(estado => estado.id != id);
+    localStorage[LS_CHAVE] = JSON.stringify(estados);
   }
 
 }
